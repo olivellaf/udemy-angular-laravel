@@ -1,0 +1,16 @@
+<h1>Movie</h1>
+<button [routerLink]="'/movies'" class="btn btn-primary btn-sm">Back to movies</button>
+<hr>
+
+<div class="row" *ngIf="movie$ | async; let movie">
+  <div class="col-md-4">
+    <img [src]="movie.cover" alt="{{ movie.title }} Image Cover" class="img-fluid"/>
+  </div>
+
+  <div class="col-md-8">
+    <h3>{{ movie.title }}</h3>
+    <h5>{{ movie.year }}</h5>
+    <hr>
+    <p>{{ movie.synopsis }}</p>
+  </div>
+</div>
